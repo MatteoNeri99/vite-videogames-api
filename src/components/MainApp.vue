@@ -18,14 +18,13 @@ export default {
         axios.get('https://api.rawg.io/api/games', {
             params: {
               key:'55c0752d60214456b09ce901954f35c1',
-              page_size: 50
+              page_size: '50',
             
             }
           })
           .then((response) => {
             console.log(response.data.results);
             this.videoGames = response.data.results
-            console.log(this.videoGames);
           })
           .catch(function (error) {
             console.log(error);
@@ -46,7 +45,13 @@ export default {
 
   <main>
 
+    <h1>videogames</h1>
+
+    <div>
+
       <VideoGamesCard :videoGames='videoGames'/>
+
+    </div>
     
   </main>
  
@@ -55,9 +60,37 @@ export default {
 
 <style scoped>
 
+
+
 main{
-  background-color: #292929;
-  color: white;
+
+  height: 100vh;
+  padding: 5rem;
+  overflow: scroll;
+  
+
+  h1{
+    font-family: arial, verdana, sans-serif;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    line-height: 150%;
+    color: #0893e8;
+    text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
+
+  }
 }
+
+div{
+  overflow: scroll;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-bottom: 5rem;
+ 
+}
+
 
 </style>

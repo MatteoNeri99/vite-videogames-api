@@ -4,8 +4,7 @@ import VideoGamesElement from './VideoGamesElement.vue';
 export default {
     data() {
       return {
-        videoGames:[],
-        
+       
         
       }
     },components:{
@@ -24,30 +23,28 @@ export default {
 </script>
 
 <template>
-  <section>
-    <article v-for="videoGame in videoGames" >
+
+  <article v-for="videoGame in videoGames" >
      
-     <VideoGamesElement   :videoGame="videoGame"/>
+    <VideoGamesElement   :videoGame="videoGame"/>
      
        
-   </article>
-
-  </section>
-    
-
+  </article>
 
 </template>
 
 <style scoped>
-section{
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  align-items: center;
-}
+
 article{
-  width: calc((100% / 5) - 2rem);
-  
+  width: calc((100% / 5) - 3rem);
+  height: 20rem;
+  margin-left: 2.5rem;
+  margin-bottom: 1.5rem;
 }
+article:hover{
+  border: 5px solid #0893e8;
+  border-radius: 20px;
+}
+
 
 </style>

@@ -33,7 +33,18 @@ export default {
   margin:0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
 }
+
+body{
+  background-image:url('https://dlcdnrog.asus.com/rog/media/1513879516480.webp');
+  background-repeat: no-repeat;
+  overflow: hidden;
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
+}
+
+
 
 </style>

@@ -18,11 +18,8 @@ export default {
     <header>
 
         <img src="../img/logo.png" alt="">
+        <h1>videogames</h1>
         <input type="text" placeholder=" search">
-
-
-
-        
 
     </header>
 
@@ -34,12 +31,12 @@ export default {
 <style scoped>
 
 header{
-    background-color: black;
+   
     display: flex;
-    padding: 1.5rem;
-
+    
     img{
-    width: 100px;
+    width: 150px;
+    margin-left: 2rem;
     }
 
     input{
@@ -48,6 +45,9 @@ header{
         padding-right: 50rem;
         border-radius: 20px;
         border-color: transparent;
+        color: black;
+        border: 3px solid #0893e8;
+
     }
 }
 
