@@ -9,6 +9,7 @@ export default {
     data() {
       return {
         
+        
       }
     }, components:{
       HeaderApp,
@@ -20,9 +21,9 @@ export default {
 
 <template>
 
-  <HeaderApp/>
+  <HeaderApp />
 
-  <MainApp/>
+  <MainApp />
 
  
 
@@ -36,8 +37,7 @@ export default {
 }
 
 body{
-  background-image:url('https://dlcdnrog.asus.com/rog/media/1513879516480.webp');
-  background-repeat: no-repeat;
+  background-image:url('https://img.freepik.com/vettori-gratuito/luce-blu-astratta-zoom-velocita-tubo-su-sfondo-nero-tecnologia_1142-9980.jpg');
   overflow: hidden;
   font-family: "Teko", sans-serif;
   font-optical-sizing: auto;

@@ -36,13 +36,13 @@ export default {
 <style scoped>
 
 article{
-  width: calc((100% / 5) - 3rem);
+  width: calc((100% / 8) - 3rem);
   height: 20rem;
   margin-left: 2.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 5rem;
 }
 article:hover{
-  border: 5px solid #0893e8;
+  border: 5px solid #1feeff;
   border-radius: 20px;
 }
 

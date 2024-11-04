@@ -35,6 +35,7 @@ img{
   height: 60%;
   margin-bottom: 1rem;
   border-radius: 20px;
+  object-fit: cover;
   
 }
 
@@ -51,7 +52,7 @@ p.title{
   text-transform: uppercase;
   line-height: 150%;
   color: rgb(255, 255, 255);
-  text-shadow: -1px 0 #0893e8, 0 1px #0893e8, 1px 0 #0893e8, 0 -1px #0893e8;
+  text-shadow: -1px 0 #1feeff, 0 1px #1feeff, 1px 0 #1feeff, 0 -1px #1feeff;
 }
 
 p.description{
