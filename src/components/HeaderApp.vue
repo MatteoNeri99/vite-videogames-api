@@ -69,7 +69,6 @@ export default {
 
 header{
   height: 140px;
-   
   display: flex;
   
   .logo{

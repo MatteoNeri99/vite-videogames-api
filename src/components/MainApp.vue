@@ -29,7 +29,7 @@ export default {
         })
         .then((response) => {
           store.videoGames = response.data.results;
-          console.log(store.searchText)
+          console.log(store.videoGames)
 
         })
         .catch(function (error) {

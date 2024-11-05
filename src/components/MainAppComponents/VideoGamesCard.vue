@@ -24,9 +24,12 @@ export default {
 
 <template>
 
-  <article v-for="videoGame in videoGames" >
+<article v-for="videoGame in videoGames" >
      
     <VideoGamesElement   :videoGame="videoGame"/>
+    <router-link :to="{ name: 'videogame-details', params: { id: videoGame.id } }" >
+    Mostra dettagli
+    </router-link>
      
        
   </article>
