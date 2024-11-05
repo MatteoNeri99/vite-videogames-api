@@ -17,17 +17,18 @@ export default {
     },methods:{
 
       // chiamata get all'api
-      getVideoGames(){
+      searchVideoGames(){
         axios.get('https://api.rawg.io/api/games', {
           params: {
             key:'55c0752d60214456b09ce901954f35c1',
             search : store.searchText,
+            page_size: '16'
             
             }
           })
           .then((response) => {
             store.videoGames = response.data.results;
-            console.log(store.searchText)
+            console.log(store.videoGames)
 
           })
           .catch(function (error) {
@@ -49,11 +50,12 @@ export default {
 
     <header>
 
-        <img src="../img/videogames-2-11-2024-removebg-preview.png" alt="">
         
-        <input type="text" placeholder=" search" v-model="store.searchText" >
+        <router-link :to="{ name: 'homepage', }"><img src="../img/videogames-2-11-2024-removebg-preview.png" alt="" class="logo"></router-link>
+        
+        <input type="text" placeholder=" search" v-model="store.searchText" @keyup="searchVideoGames" >
 
-        <button @click="getVideoGames">cerca</button>
+        <button  @click="searchVideoGames" >cerca</button>
 
 
     </header>
@@ -66,12 +68,14 @@ export default {
 <style scoped>
 
 header{
+  height: 140px;
    
   display: flex;
   
-  img{
+  .logo{
   width: 500px;
   margin-left: 2rem;
+  margin-top: 1rem;
   }
 
   input{

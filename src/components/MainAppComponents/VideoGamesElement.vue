@@ -50,6 +50,7 @@ p.title{
   font-family: arial, verdana, sans-serif;
   text-align: center;
   text-transform: uppercase;
+  font-size: .8rem;
   line-height: 150%;
   color: rgb(255, 255, 255);
   text-shadow: -1px 0 #1feeff, 0 1px #1feeff, 1px 0 #1feeff, 0 -1px #1feeff;

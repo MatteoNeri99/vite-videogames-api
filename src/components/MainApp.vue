@@ -3,6 +3,7 @@ import axios from 'axios';
 import VideoGamesCard from './MainAppComponents/VideoGamesCard.vue';
 import { store } from '../store.js';
 
+
 export default {
     data() {
       return {
@@ -13,82 +14,87 @@ export default {
     },components:{
       VideoGamesCard,
      
-    },props:{
-
-     searchText:{
-      type:String,
-      
-
-     }
     },methods:{
 
         // chiamata get all'api
       getVideoGames(){
         axios.get('https://api.rawg.io/api/games', {
-            params: {
-              key:'55c0752d60214456b09ce901954f35c1',
-              page:this.numberPages,
-              page_size:'16'
-            
-            }
-          })
-          .then((response) => {
-            store.videoGames = response.data.results;
-            console.log(store.searchText)
+          params: {
+            key:'55c0752d60214456b09ce901954f35c1',
+            page:store.numberPages,
+            page_size:'16',
+            search : store.searchText,
+          
+          }
+        })
+        .then((response) => {
+          store.videoGames = response.data.results;
+          console.log(store.searchText)
 
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-          .finally(function () {
-            // always executed
-          });  
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+        .finally(function () {
+          // always executed
+        });  
 
       },
 
         // funzione che permette di andare avanti di una pagina 
       nextPage (){
 
-        this.numberPages =this.numberPages + 1;
+        store.numberPages =store.numberPages + 1;
       },
          // funzione che permette di tornare un pagina indietro
       beforePage(){
 
-        this.numberPages =this.numberPages - 1;
+        store.numberPages =store.numberPages - 1;
+      },
+
+      addAnimationLeft(){
+        const divEl = document.querySelector('.container')
+        divEl.classList.add('horizontalAnimationLeft');
+        setTimeout(() => {
+          divEl.classList.remove('horizontalAnimationLeft');
+        }, "500");
+
+      },
+      addAnimationRight(){
+        const divEl = document.querySelector('.container')
+        divEl.classList.add('horizontalAnimationRight');
+        setTimeout(() => {
+          divEl.classList.remove('horizontalAnimationRight');
+        }, "500");
+
       },
 
 
-      
-      
-
-     
 
     },created(){
       this.getVideoGames();
       
     },
   }
+
 </script>
 
 <template>
 
   <main>
-    
     <section>
 
-      <button  @click.prevent=(beforePage) @click.event=(getVideoGames)>ᐊ</button>
+      <button  @click.prevent=(beforePage) @click.event=(getVideoGames) @click="addAnimationLeft">ᐊ</button>
 
-      <div>
+      <div class="container">
       
         <VideoGamesCard :videoGames='store.videoGames'/>
 
       </div>
 
-      <button  @click.prevent=(nextPage) @click.event=(getVideoGames)>ᐅ</button>
-  </section>
+      <button  @click.prevent=(nextPage) @click.event=(getVideoGames)  @click="addAnimationRight">ᐅ</button>
 
-    
-    
+    </section>
   </main>
  
   
@@ -100,8 +106,9 @@ export default {
 
 main{
   
-  height: 100vh;
+  height: calc(100vh - 140px);
   overflow: scroll;
+
   
 }
 
@@ -135,5 +142,41 @@ button:hover{
   font-size: 4rem;
 }
 
+
+
+.horizontalAnimationLeft {
+  animation-duration: .5s;
+  animation-name: slide-in-left;
+}
+
+@keyframes slide-in-left {
+  from {
+    translate: 0 0;
+    
+    /* scale: 150% 1; */
+  }
+
+  to {
+    translate: 100vw 0;
+    /* scale: 100% 1; */
+  }
+}
+
+.horizontalAnimationRight {
+  animation-duration: .5s;
+  animation-name: slide-in-right;
+}
+
+@keyframes slide-in-right {
+  from {
+    translate:  0 0vw;
+    /* scale: 150% 1; */
+  }
+
+  to {
+    translate: -100vw 0;
+    /* scale: 100% 1; */
+  }
+}
 
 </style>
