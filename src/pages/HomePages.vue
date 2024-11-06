@@ -19,7 +19,7 @@ export default {
       <img src="../img/logoInv.png" alt="" class="logo">
 
       <div class="container">
-        <router-link :to="{ name: 'videogames', }" >Videogames</router-link>
+        <router-link :to="{ name: 'videogames', }" >Lista videogiochi</router-link>
         <router-link :to="{ name: 'videogames', }" >Videogames</router-link>
         <router-link :to="{ name: 'videogames', }" >Videogames</router-link>
 

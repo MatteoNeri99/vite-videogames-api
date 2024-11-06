@@ -24,14 +24,13 @@ export default {
 
 <template>
 
-<article v-for="videoGame in videoGames" >
-     
+  <article v-for="videoGame in videoGames" >
+      
     <VideoGamesElement   :videoGame="videoGame"/>
-    <router-link :to="{ name: 'videogame-details', params: { id: videoGame.id } }" >
-    Mostra dettagli
-    </router-link>
-     
-       
+    <span>
+      <router-link :to="{ name: 'videogame-details', params: { id: videoGame.id } }" >Mostra dettagli</router-link>
+    </span>
+      
   </article>
 
 </template>
@@ -40,7 +39,7 @@ export default {
 
 article{
   width: calc((100% / 8) - 3rem);
-  height: 20rem;
+  height: 25rem;
   margin-left: 2.5rem;
   margin-bottom: 5rem;
 }
@@ -48,6 +47,22 @@ article:hover{
   border: 5px solid #1feeff;
   border-radius: 20px;
 }
+span{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
 
+a{
+  border-radius: 20px;
+  padding: .3rem;
+  background-color: #1feeff;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+}
+ 
 
 </style>

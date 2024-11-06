@@ -22,7 +22,7 @@ export default {
 
 <template>
   
-   <img :src="videoGame.background_image" alt="">
+   <img :src="videoGame.background_image == null ? '/src/img/null.png' : videoGame.background_image" alt="">
    <p class="title">{{ videoGame.slug }}</p>
    <p class="description">{{ videoGame.released }}</p>
     
